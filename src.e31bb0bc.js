@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./..\\images\\wave-m.png":[["wave-m.4714da1c.png","images/wave-m.png"],"images/wave-m.png"],"./..\\images\\wave-m@2x.png":[["wave-m@2x.0272d22a.png","images/wave-m@2x.png"],"images/wave-m@2x.png"],"./..\\images\\wave-t.png":[["wave-t.294cdb5d.png","images/wave-t.png"],"images/wave-t.png"],"./..\\images\\wave-t@2x.png":[["wave-t@2x.0301a5a7.png","images/wave-t@2x.png"],"images/wave-t@2x.png"],"./..\\images\\wave-d.png":[["wave-d.8f45ee0d.png","images/wave-d.png"],"images/wave-d.png"],"./..\\images\\wave-d@2x.png":[["wave-d@2x.5852c9c6.png","images/wave-d@2x.png"],"images/wave-d@2x.png"],"./..\\images\\person.svg":[["person.a3cefcb9.svg","images/person.svg"],"images/person.svg"],"./..\\images\\cap.svg":[["cap.d49cd995.svg","images/cap.svg"],"images/cap.svg"],"./..\\images\\umbrella.svg":[["umbrella.22631f42.svg","images/umbrella.svg"],"images/umbrella.svg"],"./..\\images\\mark.svg":[["mark.e7496571.svg","images/mark.svg"],"images/mark.svg"],"./..\\images\\fire.svg":[["fire.8570960f.svg","images/fire.svg"],"images/fire.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
+},{"./..\\images\\wave-m.png":[["wave-m.4714da1c.png","images/wave-m.png"],"images/wave-m.png"],"./..\\images\\wave-m@2x.png":[["wave-m@2x.0272d22a.png","images/wave-m@2x.png"],"images/wave-m@2x.png"],"./..\\images\\wave-t.png":[["wave-t.294cdb5d.png","images/wave-t.png"],"images/wave-t.png"],"./..\\images\\wave-t@2x.png":[["wave-t@2x.0301a5a7.png","images/wave-t@2x.png"],"images/wave-t@2x.png"],"./..\\images\\wave-d.png":[["wave-d.8f45ee0d.png","images/wave-d.png"],"images/wave-d.png"],"./..\\images\\wave-d@2x.png":[["wave-d@2x.5852c9c6.png","images/wave-d@2x.png"],"images/wave-d@2x.png"],"./..\\images\\person.svg":[["person.a3cefcb9.svg","images/person.svg"],"images/person.svg"],"./..\\images\\cap.svg":[["cap.d49cd995.svg","images/cap.svg"],"images/cap.svg"],"./..\\images\\umbrella.svg":[["umbrella.22631f42.svg","images/umbrella.svg"],"images/umbrella.svg"],"./..\\images\\fire.svg":[["fire.8570960f.svg","images/fire.svg"],"images/fire.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 require("./sass/main.scss");
@@ -221,7 +221,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54707" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63498" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
