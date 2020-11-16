@@ -3,6 +3,7 @@
 *::after {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -51,6 +52,13 @@ button {
   margin-left: auto;
   margin-right: auto;
 }
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
@@ -60,7 +68,7 @@ button {
 }
 @media screen and (min-width: 1344px) {
   .container {
-    width: 1344;
+    width: 1344px;
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -68,6 +76,7 @@ button {
 
 .header {
   position: absolute;
+  z-index: 2;
   width: 100%;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -78,7 +87,7 @@ button {
     padding-bottom: 40px;
   }
 }
-@media screen and (min-width: 1320px) {
+@media screen and (min-width: 1344px) {
   .header {
     padding-top: 34px;
     padding-bottom: 34px;
@@ -93,7 +102,7 @@ button {
 .navigation__list {
   display: none;
 }
-@media screen and (min-width: 1320px) {
+@media screen and (min-width: 1344px) {
   .navigation__list {
     display: flex;
   }
@@ -109,6 +118,7 @@ button {
   line-height: 1.2142857143;
   text-transform: uppercase;
   color: #b9b9b9;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .navigation__link:hover, .navigation__link:focus {
   color: #ff6b09;
@@ -118,6 +128,12 @@ button {
   width: 80px;
   height: 28px;
   fill: black;
+}
+@media screen and (min-width: 768px) {
+  .logo__svg {
+    width: 128px;
+    height: 45px;
+  }
 }
 .logo--white {
   fill: #ffffff;
@@ -132,6 +148,9 @@ button {
 }
 
 .menu__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 260px;
   height: 48px;
   font-weight: 700;
@@ -139,14 +158,15 @@ button {
   line-height: 1.25;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background-color: transparent;
+  background-color: #ff6b09;
   border: 2px solid #ff6b09;
-  color: #ff6b09;
-  outline: none;
+  color: #ffffff;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .menu__button:hover, .menu__button:focus {
-  background-color: #ff6b09;
-  color: #ffffff;
+  background-color: transparent;
+  color: #ff6b09;
+  cursor: pointer;
 }
 @media screen and (max-width: 767px) {
   .header .menu__button {
@@ -158,13 +178,13 @@ button {
     display: none;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1319px) {
+@media screen and (min-width: 768px) and (max-width: 1343px) {
   .menu__button {
     margin-left: auto;
     margin-right: 40px;
   }
 }
-@media screen and (min-width: 1320px) {
+@media screen and (min-width: 1344px) {
   .menu__button {
     width: 336px;
     height: 70px;
@@ -175,23 +195,10 @@ button {
   }
 }
 
-@media screen and (max-width: 767px) {
-  .logo__other {
-    display: none;
-  }
-}
-@media screen and (min-width: 768px) {
-  .logo__mobile {
-    display: none;
-  }
-
-  .logo__svg {
-    width: 128px;
-    height: 45px;
-  }
-}
 .modal-menu {
+  backdrop-filter: blur(3px);
   position: absolute;
+  z-index: 999;
   top: 0;
   left: 0;
   width: 100%;
@@ -208,7 +215,7 @@ button {
     padding-bottom: 40px;
   }
 }
-@media screen and (min-width: 1320px) {
+@media screen and (min-width: 1344px) {
   .modal-menu {
     display: none;
   }
@@ -251,6 +258,7 @@ button {
     font-weight: 800;
     font-size: 26px;
     line-height: 1.8076923077;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 .modal-menu__link:hover, .modal-menu__link:focus {
@@ -263,11 +271,12 @@ button {
   background-color: transparent;
   cursor: pointer;
   outline: none;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn:hover .modal-btn__icon, .modal-btn:focus .modal-btn__icon {
   fill: #ff6b09;
 }
-@media screen and (min-width: 1320px) {
+@media screen and (min-width: 1344px) {
   .modal-btn {
     display: none;
   }
@@ -305,7 +314,7 @@ button {
   border: none;
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 480px) {
   .hero {
     display: flex;
     text-align: center;
@@ -313,7 +322,6 @@ button {
   }
 
   .hero .container {
-    min-width: 320px;
     padding-top: 110px;
   }
 
@@ -341,7 +349,7 @@ button {
     margin: 0 auto;
   }
 }
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (min-width: 480px) and (max-width: 767px) {
   .hero {
     min-height: 618px;
     background-image: url("/wave-m.4714da1c.png");
@@ -372,10 +380,14 @@ button {
 @media screen and (min-width: 768px) {
   .hero {
     text-align: left;
+    min-height: 557px;
+    background-image: url("/wave-t.294cdb5d.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 620px;
   }
 
   .hero .container {
-    min-width: 768px;
     padding-top: 158px;
   }
 
@@ -385,21 +397,21 @@ button {
     max-width: 290px;
   }
 }
-@media screen and (min-width: 768px) {
-  .hero {
-    min-height: 557px;
-    background-image: url("/wave-t.294cdb5d.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 620px;
-  }
-}
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px), screen and (min-resolution: 192dpi) and (min-width: 768px), screen and (min-resolution: 2dppx) and (min-width: 768px) {
   .hero {
     background-image: url("/wave-t@2x.0301a5a7.png");
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1319px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .hero__img {
+    position: absolute;
+    top: 160px;
+    left: 47%;
+    width: 376px;
+    height: 321px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1343px) {
   .hero .container {
     position: relative;
   }
@@ -411,18 +423,18 @@ button {
   .hero__button {
     margin-top: 30px;
   }
-
+}
+@media screen and (min-width: 1200px) and (max-width: 1343px) {
   .hero__img {
     position: absolute;
-    top: 160px;
+    top: 150px;
     left: 50%;
-    width: 376px;
-    height: 321px;
+    width: 422px;
+    height: 360px;
   }
 }
-@media screen and (min-width: 1320px) {
+@media screen and (min-width: 1344px) {
   .hero .container {
-    min-width: 1320px;
     padding-top: 229px;
     position: relative;
   }
@@ -463,7 +475,7 @@ button {
     height: 718px;
   }
 }
-@media screen and (min-width: 1320px) {
+@media screen and (min-width: 1344px) {
   .hero {
     min-height: 878px;
     background-image: url("/wave-d.8f45ee0d.png");
@@ -472,7 +484,7 @@ button {
     background-size: 100% 950px;
   }
 }
-@media screen and (min-device-pixel-ratio: 2) and (min-width: 1320px), screen and (min-resolution: 192dpi) and (min-width: 1320px), screen and (min-resolution: 2dppx) and (min-width: 1320px) {
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 1344px), screen and (min-resolution: 192dpi) and (min-width: 1344px), screen and (min-resolution: 2dppx) and (min-width: 1344px) {
   .hero {
     background-image: url("/wave-d@2x.5852c9c6.png");
   }
@@ -521,25 +533,19 @@ button {
   margin-bottom: 30px;
 }
 
-.methods {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
 .methods__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 .methods__item {
+  margin-bottom: 15px;
   align-items: center;
   justify-content: center;
   width: 280px;
   height: 280px;
   background: #ffffff;
   box-shadow: 0px 8px 26px rgba(0, 0, 0, 0.1);
-}
-.methods__item:hover {
-  background-color: #ff6b09;
 }
 .methods__title {
   font-weight: 800;
@@ -549,7 +555,7 @@ button {
   text-align: center;
   letter-spacing: 0.03em;
   color: #111518;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .methods__svg {
   fill: #ff6b09;
@@ -589,85 +595,7 @@ button {
   letter-spacing: 0.08em;
   color: #b9b9b9;
 }
-.methods__item:hover .methods__svg {
-  fill: #ffffff;
-}
-.methods__item:hover .methods__therm {
-  color: #ffffff;
-}
-.methods__item:hover .methods__text {
-  color: #ffffff;
-}
-.methods__item:hover .methods__therm::after {
-  background-color: #ffffff;
-}
 
-@media screen and (min-width: 480px) {
-  .methods {
-    width: 480px;
-  }
-  .methods__item {
-    margin-bottom: 15px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .methods__title {
-    font-size: 26px;
-    line-height: 1.3;
-  }
-  .methods__item {
-    margin-bottom: 0;
-    width: 334px;
-    height: 334px;
-  }
-  .methods__svg {
-    margin-top: 40px;
-    margin-bottom: 30px;
-  }
-  .methods__therm {
-    margin-bottom: 26px;
-  }
-  .methods__therm::after {
-    margin-top: 26px;
-  }
-  .methods__item:not(:nth-child(even)) {
-    margin-right: 20px;
-  }
-  .methods__item + .methods__item + .methods__item {
-    margin-top: 27px;
-  }
-}
-@media screen and (min-width: 1344px) {
-  .methods {
-    width: 1344px;
-  }
-  .methods__title {
-    text-align: start;
-    font-size: 46px;
-    line-height: 1.3;
-  }
-  .methods__item {
-    margin-bottom: 0;
-    width: 424px;
-    height: 396px;
-  }
-  .methods__therm {
-    margin-bottom: 16px;
-    font-size: 20px;
-    line-height: 1.4;
-  }
-  .methods__therm::after {
-    margin-top: 16px;
-  }
-  .methods__text {
-    font-size: 18px;
-    line-height: 1.56;
-  }
-  .methods__svg {
-    margin-top: 40px;
-    margin-bottom: 30px;
-  }
-}
 .programm {
   background: #111518;
   font-style: normal;
@@ -787,9 +715,16 @@ button {
 }
 
 .benefits {
+  margin-top: -2px;
   position: relative;
   padding-bottom: 40px;
-  background-image: linear-gradient(to bottom, #111518 50%, #ffffff 50%);
+  background-image: linear-gradient(to bottom, #111518 65%, #ffffff 35%);
+}
+
+@media screen and (min-width: 768px) {
+  .benefits .container {
+    width: 688px;
+  }
 }
 
 .benefits__title {
@@ -806,11 +741,28 @@ button {
     width: 100%;
   }
 }
+@media screen and (min-width: 1200px) {
+  .benefits__title {
+    visibility: hidden;
+  }
+}
 
 .benefits__img {
   position: absolute;
   top: -90px;
   right: 0px;
+}
+@media screen and (min-width: 768px) {
+  .benefits__img {
+    top: -325px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .benefits__img {
+    top: -350px;
+    left: 0;
+    z-index: 0;
+  }
 }
 
 .benefits__list {
@@ -818,9 +770,45 @@ button {
   background-color: #ffffff;
   box-shadow: -5px 8px 26px rgba(0, 0, 0, 0.04);
 }
+@media screen and (min-width: 768px) {
+  .benefits__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .benefits__list {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .benefits__list-item {
+    width: 236px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .benefits__list-item {
+    padding-right: 40px;
+  }
+}
 
 .benefits__list-item:not(:last-child) {
   margin-bottom: 25px;
+}
+
+@media screen and (min-width: 768px) {
+  .benefits__list-item:nth-last-child(-n+2) {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .benefits__list-item:nth-child(odd) {
+    margin-right: 20px;
+  }
 }
 
 .benefits__number {
@@ -832,6 +820,12 @@ button {
   line-height: 1.642;
   letter-spacing: 0.08em;
   color: #ff6b09;
+}
+@media screen and (min-width: 1200px) {
+  .benefits__number {
+    font-size: 20px;
+    line-height: 1.642;
+  }
 }
 
 .benefits__number::before {
@@ -851,10 +845,15 @@ button {
   letter-spacing: 0.08em;
   color: #111518;
 }
+@media screen and (min-width: 1200px) {
+  .benefits__text {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
 
 .teacher__wrapper {
-  width: 285px;
-  height: 1040px;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .teacher__wrapper {
@@ -872,8 +871,6 @@ button {
 }
 
 .teacher__photo {
-  width: 243px;
-  height: 306px;
   padding-bottom: 20px;
 }
 
@@ -893,10 +890,14 @@ button {
 }
 
 .teacher__experience-item {
-  display: flex;
+  margin-bottom: 20px;
+  background-image: url(/mark.e7496571.svg);
+  background-repeat: no-repeat;
 }
 
 .teacher__experience-description {
+  margin-left: 9px;
+  padding-left: 9px;
   font-weight: 600;
   font-size: 14px;
   line-height: 1.214;
@@ -904,13 +905,15 @@ button {
   color: #111518;
 }
 
-.teacher__experience-svg {
-  width: 17px;
-  height: 14px;
-  margin-right: 9px;
+.teacher__education {
+  position: relative;
+  padding-top: 20px;
 }
 
 .teacher__education::before {
+  position: absolute;
+  top: 0;
+  left: 0;
   content: "";
   display: inline-block;
   width: 20px;
@@ -919,7 +922,7 @@ button {
 }
 
 .teacher__education-description {
-  padding-bottom: 20px;
+  margin-bottom: 21px;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.666;
@@ -974,15 +977,32 @@ button {
 }
 
 .fire {
+  position: relative;
   background-image: url("/fire.8570960f.svg");
   background-repeat: no-repeat;
+}
+
+.fire:not(:last-child)::after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 68px;
+  top: 0;
+  position: absolute;
+  border: 1px dashed #B9B9B9;
+  margin-top: 25px;
+  right: 97%;
+}
+
+.warranty-list__item:not(:last-child) {
+  margin-bottom: 20px;
 }
 
 .testimonials {
   position: relative;
   padding-top: 50px;
   padding-bottom: 50px;
-  height: 564px;
+  background: #fefefe;
   text-align: center;
 }
 .testimonials__title {
@@ -991,7 +1011,15 @@ button {
   line-height: 1.3;
   letter-spacing: 0.03em;
   color: #111518;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .testimonials__title {
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 1.3076923077;
+    margin-bottom: 30px;
+  }
 }
 .testimonials__list {
   display: flex;
@@ -999,18 +1027,68 @@ button {
 }
 .testimonials__prev-btn {
   position: absolute;
-  left: 0;
-  bottom: 20px;
+  left: 20px;
+  bottom: 70px;
+}
+@media screen and (min-width: 768px) {
+  .testimonials__prev-btn {
+    left: 28px;
+    bottom: 50%;
+    transform: translateY(-50%);
+  }
 }
 .testimonials__next-btn {
   position: absolute;
-  right: 0;
-  bottom: 20px;
+  right: 20px;
+  bottom: 70px;
+}
+@media screen and (min-width: 768px) {
+  .testimonials__next-btn {
+    right: 28px;
+    bottom: 50%;
+    transform: translateY(-50%);
+  }
+}
+.testimonials__photos-list {
+  display: flex;
+  width: 192px;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 768px) {
+  .testimonials__photos-list {
+    width: 100%;
+    justify-content: center;
+  }
+}
+.testimonials__photos-item {
+  min-width: 54px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .testimonial {
-  min-width: 280px;
-  flex-grow: 0;
+  min-width: 100%;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  background: #ffffff;
+  box-shadow: -5px 8px 26px rgba(0, 0, 0, 0.04);
+}
+@media screen and (min-width: 768px) {
+  .testimonial {
+    display: flex;
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+  }
 }
 .testimonial__photo-thumb {
   display: inline-block;
@@ -1021,11 +1099,77 @@ button {
   overflow: hidden;
   margin-bottom: 20px;
 }
+@media screen and (min-width: 768px) {
+  .testimonial__photo-thumb {
+    width: 150px;
+    height: 150px;
+  }
+}
+.testimonial__social {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 .testimonial__social-link {
-  display: inline-block;
+  display: block;
+  height: 30px;
 }
 .testimonial__social-svg {
   fill: #436eab;
+}
+.testimonial__student-name {
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1.2142857143;
+  letter-spacing: 0.08em;
+  color: #ff6b09;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  .testimonial__student-name {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+}
+.testimonial__subtitle {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  max-width: 355px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 768px) {
+  .testimonial__subtitle {
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.testimonial__description {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.6666666667;
+  color: #3d3d3d;
+}
+.testimonial_long-switch-btn {
+  color: #ff6b09;
+  text-decoration: underline;
+}
+@media screen and (min-width: 768px) {
+  .testimonial__avatar-side {
+    padding-right: 46px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .testimonial__description-side {
+    text-align: start;
+  }
 }
 
 .contacts__form {
