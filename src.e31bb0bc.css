@@ -514,7 +514,7 @@ button {
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .features {
-    padding-top: 77px;
+    padding-top: 30px;
     padding-bottom: 50px;
   }
 
@@ -528,7 +528,12 @@ button {
     letter-spacing: 0.08em;
     width: 148px;
     height: 60px;
-    padding-left: 74px;
+    margin-left: 74px;
+  }
+
+  .features-list {
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1343px) {
@@ -545,13 +550,11 @@ button {
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.08em;
-    padding-left: 74px;
+    margin-left: 74px;
   }
 
-  .features-list__items {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
+  .features-list__items:not(:last-child) {
+    margin-right: 20px;
   }
 }
 @media screen and (min-width: 1344px) {
@@ -564,12 +567,6 @@ button {
     display: flex;
   }
 
-  .features-list__items {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 15px;
-  }
-
   .features-list__title {
     font-size: 20px;
     line-height: 164.9%;
@@ -578,11 +575,45 @@ button {
     letter-spacing: 0.08em;
     margin-left: 90px;
   }
+
+  .person {
+    background-image: url("/person-d.fa2df65f.svg");
+  }
+
+  .cap {
+    background-image: url("/cap-d.c7eac82d.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .umbrella {
+    background-image: url("/umbrella-d.f4c306c4.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .features-list__items {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
 }
 .problems {
   position: relative;
   padding-bottom: 50px;
   background-image: linear-gradient(to bottom, #111518 70%, #ffffff 30%);
+}
+@media screen and (min-width: 768px) {
+  .problems {
+    background-image: linear-gradient(to bottom, #111518 65%, #ffffff 35%);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .problems {
+    background-image: url(/campfire.6d89cfeb.png), linear-gradient(to bottom, #111518 75%, #ffffff 35%);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 101% 25%, 100% 100%;
+    background-size: auto;
+  }
 }
 
 .problems__title {
@@ -642,6 +673,7 @@ button {
     flex-wrap: wrap;
     justify-content: center;
     padding: 70px 112px 62px 112px;
+    margin: 0 auto;
   }
 }
 .problems__list .problems__item {
@@ -1410,18 +1442,12 @@ button {
   }
 }
 
-.warranty {
-  padding-top: 50px;
-}
-
 .warranty .container {
   padding: 0;
 }
 
 @media screen and (min-width: 320px) {
   .warranty__title {
-    font-family: "Montserrat", sans-serif;
-    font-style: normal;
     font-weight: 800;
     font-size: 26px;
     line-height: 130%;
@@ -1429,6 +1455,10 @@ button {
     letter-spacing: 0.03em;
     color: #111518;
     margin-bottom: 30px;
+  }
+
+  .warranty {
+    padding-top: 50px;
   }
 
   .warranty-list {
@@ -1492,6 +1522,10 @@ button {
     width: 768px;
   }
 
+  .warranty {
+    padding-top: 50px;
+  }
+
   .warranty-list {
     padding-left: 79px;
     padding-right: 50px;
@@ -1509,6 +1543,10 @@ button {
 @media screen and (min-width: 1344px) {
   .warranty .container {
     width: 1314px;
+  }
+
+  .warranty {
+    padding-top: 130px;
   }
 
   .warranty__title {
