@@ -117,83 +117,35 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"js/up-btn.js":[function(require,module,exports) {
+//Get the button:
+mybutton = document.getElementById("myBtn"); // When the user scrolls down 20px from the top of the document, show the button
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
   }
-
-  return bundleURL;
 }
 
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+var scrollToTopBtn = document.getElementById("myBtn");
+var rootElement = document.documentElement;
 
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
+function scrollToTop() {
+  // Scroll to top logic
+  rootElement.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"sass/main.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./..\\images\\hero-m.png":[["hero-m.151882bf.png","images/hero-m.png"],"images/hero-m.png"],"./..\\images\\wave-m.png":[["wave-m.4714da1c.png","images/wave-m.png"],"images/wave-m.png"],"./..\\images\\hero-m@2x.png":[["hero-m@2x.75b438a4.png","images/hero-m@2x.png"],"images/hero-m@2x.png"],"./..\\images\\wave-m@2x.png":[["wave-m@2x.0272d22a.png","images/wave-m@2x.png"],"images/wave-m@2x.png"],"./..\\images\\hero-t.png":[["hero-t.5a52aeb1.png","images/hero-t.png"],"images/hero-t.png"],"./..\\images\\wave-t.png":[["wave-t.294cdb5d.png","images/wave-t.png"],"images/wave-t.png"],"./..\\images\\hero-t@2x.png":[["hero-t@2x.72e6945a.png","images/hero-t@2x.png"],"images/hero-t@2x.png"],"./..\\images\\wave-t@2x.png":[["wave-t@2x.0301a5a7.png","images/wave-t@2x.png"],"images/wave-t@2x.png"],"./..\\images\\hero-d1.png":[["hero-d1.9c8e86c8.png","images/hero-d1.png"],"images/hero-d1.png"],"./..\\images\\hero-d1@2x.png":[["hero-d1@2x.9992a3c3.png","images/hero-d1@2x.png"],"images/hero-d1@2x.png"],"./..\\images\\hero-d.png":[["hero-d.aff7541d.png","images/hero-d.png"],"images/hero-d.png"],"./..\\images\\wave-d.png":[["wave-d.8f45ee0d.png","images/wave-d.png"],"images/wave-d.png"],"./..\\images\\wave-d@2x.png":[["wave-d@2x.5852c9c6.png","images/wave-d@2x.png"],"images/wave-d@2x.png"],"./..\\images\\person.svg":[["person.a3cefcb9.svg","images/person.svg"],"images/person.svg"],"./..\\images\\cap.svg":[["cap.d49cd995.svg","images/cap.svg"],"images/cap.svg"],"./..\\images\\umbrella.svg":[["umbrella.22631f42.svg","images/umbrella.svg"],"images/umbrella.svg"],"./..\\images\\person-d.svg":[["person-d.fa2df65f.svg","images/person-d.svg"],"images/person-d.svg"],"./..\\images\\cap-d.svg":[["cap-d.c7eac82d.svg","images/cap-d.svg"],"images/cap-d.svg"],"./..\\images\\umbrella-d.svg":[["umbrella-d.f4c306c4.svg","images/umbrella-d.svg"],"images/umbrella-d.svg"],"./..\\images\\campfire.png":[["campfire.6d89cfeb.png","images/campfire.png"],"images/campfire.png"],"./..\\images\\mark.svg":[["mark.e7496571.svg","images/mark.svg"],"images/mark.svg"],"./..\\images\\fire.svg":[["fire.8570960f.svg","images/fire.svg"],"images/fire.svg"],"./..\\images\\fired.svg":[["fired.de3d1262.svg","images/fired.svg"],"images/fired.svg"],"./..\\images\\form-d.png":[["form-d.e5aaf179.png","images/form-d.png"],"images/form-d.png"],"./..\\images\\form-m.png":[["form-m.3e28d53a.png","images/form-m.png"],"images/form-m.png"],"./..\\images\\form-t.png":[["form-t.c5bb28b0.png","images/form-t.png"],"images/form-t.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
-"use strict";
-
-require("./sass/main.scss");
-},{"./sass/main.scss":"sass/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+scrollToTopBtn.addEventListener("click", scrollToTop);
+},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -397,5 +349,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/src.e31bb0bc.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/up-btn.js"], null)
+//# sourceMappingURL=/up-btn.8eef430d.js.map
