@@ -659,13 +659,13 @@ button {
 }
 
 .problems__list {
-  margin: -20px;
   background-color: #ffffff;
   box-shadow: -5px 8px 26px rgba(0, 0, 0, 0.04);
   padding: 20px 14px 20px 30px;
 }
 @media screen and (min-width: 768px) {
   .problems__list {
+    margin: -20px;
     display: flex;
     flex-wrap: wrap;
     padding: 30px 46px 26px 96px;
@@ -684,8 +684,30 @@ button {
     padding: 70px 80px 70px 80px;
   }
 }
-.problems__list .problems__item {
-  margin: 20px;
+@media screen and (max-width: 767px) {
+  .problems__list .problems__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .problems__list .problems__item:nth-child(odd) {
+    margin-right: 40px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .problems__list .problems__item:not(:nth-last-child(-n+2)) {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .problems__list .problems__item:not(:nth-child(3n)) {
+    margin-right: 40px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .problems__list .problems__item:not(:nth-last-child(-n+3)) {
+    margin-bottom: 30px;
+  }
 }
 @media screen and (min-width: 768px) {
   .problems__list .problems__item {
@@ -1221,7 +1243,6 @@ button {
 }
 
 .benefits__list {
-  margin: -20px;
   padding: 20px 14px 20px 30px;
   background-color: #ffffff;
   box-shadow: -5px 8px 26px rgba(0, 0, 0, 0.04);
@@ -1252,9 +1273,36 @@ button {
   }
 }
 
-.benefits__list-item {
-  margin: 20px;
+@media screen and (max-width: 767px) {
+  .benefits__list-item:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .benefits__list-item:nth-child(odd) {
+    margin-right: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .benefits__list-item:not(:nth-last-child(-n+2)) {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .benefits__list-item:not(:nth-child(3n)) {
+    margin-right: 40px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .benefits__list-item:not(:nth-last-child(-n+3)) {
+    margin-bottom: 30px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .benefits__list-item {
     width: calc((100% - 80px) / 2);
@@ -2014,6 +2062,16 @@ button {
   transition-timing-function: linear;
   transition-duration: 3s;
 }
+@media screen and (min-width: 768px) {
+  .intput__form {
+    height: 48px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .intput__form {
+    height: 70px;
+  }
+}
 
 .intput__form::placeholder {
   color: transparent;
@@ -2021,7 +2079,19 @@ button {
 
 .intput__form:focus + .form__label,
 .intput__form:not(:placeholder-shown) + .form__label {
-  display: none;
+  transform: translateX(150px);
+}
+@media screen and (min-width: 768px) {
+  .intput__form:focus + .form__label,
+.intput__form:not(:placeholder-shown) + .form__label {
+    transform: translateX(265px);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .intput__form:focus + .form__label,
+.intput__form:not(:placeholder-shown) + .form__label {
+    transform: translateX(315px);
+  }
 }
 
 .intput__form--first {
@@ -2043,10 +2113,18 @@ button {
   left: 31px;
   font-weight: 600;
   font-size: 14px;
-  line-height: 1.2142857143;
+  line-height: 1.214;
   letter-spacing: 0.08em;
   color: #FFFFFF;
   pointer-events: none;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (min-width: 1280px) {
+  .form__label {
+    top: 22px;
+    font-size: 20px;
+    line-height: 1.2;
+  }
 }
 
 .button__form {
@@ -2073,7 +2151,8 @@ button {
 
 .button__form:hover,
 .button__form:focus {
-  background-color: #ffffff;
+  border: 2px solid #ff6b09;
+  background-color: transparent;
   color: #ff6b09;
   cursor: pointer;
 }
