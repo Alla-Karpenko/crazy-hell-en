@@ -665,7 +665,6 @@ button {
 }
 @media screen and (min-width: 768px) {
   .problems__list {
-    margin: -20px;
     display: flex;
     flex-wrap: wrap;
     padding: 30px 46px 26px 96px;
