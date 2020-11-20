@@ -125,7 +125,7 @@ button {
   line-height: 1.2142857143;
   text-transform: uppercase;
   color: #b9b9b9;
-  transition: color 250ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1));
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .navigation__link:hover, .navigation__link:focus {
   color: #ff6b09;
@@ -157,7 +157,7 @@ button {
   background-color: #ff6b09;
   border: 2px solid #ff6b09;
   color: #ffffff;
-  transition: color 250ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1)), background-color 250ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1));
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .menu__button:hover, .menu__button:focus {
   background-color: transparent;
@@ -202,6 +202,10 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+#myBtn:hover {
+  transform: scale(1.2);
 }
 
 .up-btn__svg {
@@ -238,7 +242,7 @@ button {
   visibility: hidden;
   pointer-events: none;
   transform: translateY(-100%);
-  transition: all 500ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1));
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-menu__header {
   display: flex;
@@ -271,7 +275,7 @@ button {
     font-weight: 800;
     font-size: 26px;
     line-height: 1.8076923077;
-    transition: color 250ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1));
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 .modal-menu__link:hover, .modal-menu__link:focus {
@@ -284,7 +288,7 @@ button {
   background-color: transparent;
   cursor: pointer;
   outline: none;
-  transition: fill 250ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1));
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn:hover .modal-btn__icon, .modal-btn:focus .modal-btn__icon {
   fill: #ff6b09;
@@ -347,7 +351,7 @@ button {
   padding: 14px 3px;
   background: #ff6b09;
   border: 2px solid #ff6b09;
-  transition: color 250ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1)), background-color 250ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1));
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero__button:hover,
@@ -2145,7 +2149,7 @@ button {
   outline: none;
   background: #ff6b09;
   border: 2px solid #ff6b09;
-  transition: color 250ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1)), background-color 250ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1));
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media screen and (min-width: 1280px) {
   .button__form {
