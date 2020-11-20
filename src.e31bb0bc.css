@@ -125,7 +125,7 @@ button {
   line-height: 1.2142857143;
   text-transform: uppercase;
   color: #b9b9b9;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1));
 }
 .navigation__link:hover, .navigation__link:focus {
   color: #ff6b09;
@@ -157,7 +157,7 @@ button {
   background-color: #ff6b09;
   border: 2px solid #ff6b09;
   color: #ffffff;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1)), background-color 250ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1));
 }
 .menu__button:hover, .menu__button:focus {
   background-color: transparent;
@@ -238,7 +238,7 @@ button {
   visibility: hidden;
   pointer-events: none;
   transform: translateY(-100%);
-  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 500ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1));
 }
 .modal-menu__header {
   display: flex;
@@ -271,7 +271,7 @@ button {
     font-weight: 800;
     font-size: 26px;
     line-height: 1.8076923077;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1));
   }
 }
 .modal-menu__link:hover, .modal-menu__link:focus {
@@ -284,7 +284,7 @@ button {
   background-color: transparent;
   cursor: pointer;
   outline: none;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1));
 }
 .modal-btn:hover .modal-btn__icon, .modal-btn:focus .modal-btn__icon {
   fill: #ff6b09;
@@ -347,7 +347,7 @@ button {
   padding: 14px 3px;
   background: #ff6b09;
   border: 2px solid #ff6b09;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1)), background-color 250ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1));
 }
 
 .hero__button:hover,
@@ -1959,33 +1959,31 @@ button {
   letter-spacing: 0.03em;
   font-size: 14px;
   line-height: 19px;
-  text-align: center;
   font-weight: 800;
   padding-left: 20px;
   padding-right: 20px;
-  margin: 0 0 26px;
+  margin-bottom: 30px;
 }
 @media screen and (min-width: 768px) {
   .form__heading {
+    width: 688px;
     font-weight: 800;
     font-size: 26px;
     line-height: 34px;
     letter-spacing: 0.03em;
     text-align: center;
-    margin: 0 0 35px;
+    margin-bottom: 30px;
     padding: 0 50px;
   }
 }
 @media screen and (min-width: 1280px) {
   .form__heading {
+    width: 100%;
     font-weight: 800;
     font-size: 46px;
     line-height: 60px;
     letter-spacing: 0.03em;
-    text-align: center;
-    padding-left: 120px;
-    padding-right: 120px;
-    margin: 0px;
+    margin-bottom: 50px;
   }
 }
 
@@ -1994,9 +1992,10 @@ button {
   font-size: 12px;
   line-height: 15px;
   text-align: center;
+  letter-spacing: 0.08em;
   font-weight: 600;
   padding: 0 10px;
-  margin: 0 0 28px;
+  margin: 0 0 30px;
 }
 @media screen and (min-width: 768px) {
   .form__subtitle {
@@ -2006,7 +2005,7 @@ button {
     line-height: 17px;
     letter-spacing: 0.08em;
     text-align: center;
-    margin: 0 0 38px;
+    margin: 0 0 40px;
     padding: 0 128px;
   }
 }
@@ -2017,7 +2016,8 @@ button {
     line-height: 1.2;
     text-align: center;
     letter-spacing: 0.08em;
-    padding: 50px 200px;
+    margin-bottom: 56px;
+    padding: 0 180px;
   }
 }
 
@@ -2029,6 +2029,7 @@ button {
   margin: 0 auto;
   position: relative;
   width: 270px;
+  overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   .form__field {
@@ -2069,29 +2070,15 @@ button {
 }
 @media screen and (min-width: 1280px) {
   .intput__form {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
     height: 70px;
   }
 }
 
 .intput__form::placeholder {
   color: transparent;
-}
-
-.intput__form:focus + .form__label,
-.intput__form:not(:placeholder-shown) + .form__label {
-  transform: translateX(150px);
-}
-@media screen and (min-width: 768px) {
-  .intput__form:focus + .form__label,
-.intput__form:not(:placeholder-shown) + .form__label {
-    transform: translateX(265px);
-  }
-}
-@media screen and (min-width: 1280px) {
-  .intput__form:focus + .form__label,
-.intput__form:not(:placeholder-shown) + .form__label {
-    transform: translateX(315px);
-  }
 }
 
 .intput__form--first {
@@ -2109,43 +2096,65 @@ button {
 
 .form__label {
   position: absolute;
+  width: 100%;
   top: 15px;
   left: 31px;
   font-weight: 600;
   font-size: 14px;
   line-height: 1.214;
   letter-spacing: 0.08em;
-  color: #FFFFFF;
+  text-align: start;
+  color: #ffffff;
   pointer-events: none;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media screen and (min-width: 1280px) {
   .form__label {
-    top: 22px;
+    font-weight: 600;
     font-size: 20px;
     line-height: 1.2;
+    top: 23px;
+  }
+}
+
+.intput__form:focus + .form__label,
+.intput__form:not(:placeholder-shown) + .form__label {
+  transform: translateX(55%);
+  color: #b9b9b9;
+}
+@media screen and (min-width: 768px) {
+  .intput__form:focus + .form__label,
+.intput__form:not(:placeholder-shown) + .form__label {
+    transform: translateX(67%);
   }
 }
 
 .button__form {
   margin: 0 auto;
   display: block;
-  width: 354px;
-  height: 70px;
-  padding: 0 18px;
+  width: 260px;
+  height: 48px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.25;
   color: #ffffff;
+  text-transform: uppercase;
   background-color: #ff6b09;
   border-style: none;
   transition-duration: 1s;
   outline: none;
-  font-weight: 700;
   background: #ff6b09;
-  border: 2px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid #ff6b09;
+  transition: color 250ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1)), background-color 250ms cubic-bezier(cubic-bezier(0.4, 0, 0.2, 1));
 }
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 1280px) {
   .button__form {
-    width: 290px;
+    width: 354px;
+    height: 70px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2142857143;
   }
 }
 
@@ -2163,6 +2172,7 @@ button {
 
 .page-footer__list {
   padding-top: 30px;
+  padding-bottom: 30px;
   list-style: none;
   display: flex;
   flex-direction: column-reverse;
@@ -2199,48 +2209,28 @@ button {
     flex-direction: row;
   }
 }
-.page-footer__iteam:not(:last-of-type) {
-  margin-bottom: 25px;
-}
 
 .page-footer__link {
   position: relative;
   display: flex;
   align-items: center;
   font-weight: 600;
-  font-size: 30px;
-  line-height: 37px;
+  font-size: 13px;
+  line-height: 17px;
   letter-spacing: 0.08em;
+  text-align: center;
   color: #111518;
   text-decoration: none;
-}
-.page-footer__link:not(:last-of-type) {
-  margin-right: 16px;
-}
-@media screen and (max-width: 480px) {
-  .page-footer__link {
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 17px;
-    display: flex;
-    text-align: center;
-    letter-spacing: 0.08em;
-  }
-  .page-footer__link:not(:last-of-type) {
-    margin-bottom: 25px;
-  }
 }
 @media screen and (min-width: 768px) {
   .page-footer__link {
     font-size: 20px;
   }
-  .page-footer__link:not(:last-of-type) {
-    margin-right: 25px;
-  }
 }
-@media screen and (min-width: 1344px) {
+@media screen and (min-width: 1280px) {
   .page-footer__link {
-    font-size: 25px;
+    font-size: 30px;
+    line-height: 1.233;
   }
 }
 
@@ -2250,17 +2240,14 @@ button {
   }
 }
 
-.page-footer__inst {
-  flex-direction: row-reverse;
+.page-footer__link--pseudo {
+  margin-bottom: 30px;
 }
-@media screen and (max-width: 480px) {
-  .page-footer__inst {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-}
-
 @media screen and (min-width: 768px) {
+  .page-footer__link--pseudo {
+    margin-bottom: 0;
+    margin-right: 24px;
+  }
   .page-footer__link--pseudo::after {
     content: "";
     width: 0.063rem;
@@ -2271,7 +2258,7 @@ button {
     margin-left: 16px;
   }
 }
-@media screen and (min-width: 1344px) {
+@media screen and (min-width: 1280px) {
   .page-footer__link--pseudo::before {
     content: "";
     width: 32px;
@@ -2279,34 +2266,17 @@ button {
   }
 }
 
-.page__footer--img {
-  flex-direction: row-reverse;
-}
-@media screen and (max-width: 480px) {
-  .page__footer--img {
-    align-items: center;
-    max-width: max-content;
-    margin: 0 auto;
-  }
-}
-@media screen and (min-width: 768px) {
-  .page__footer--img {
-    align-items: center;
-    max-width: max-content;
-    margin: 0 auto;
-  }
-}
-
 .logo__svg {
-  width: 128px;
-  height: 45px;
+  width: 80px;
+  height: 30px;
+  margin-bottom: 21px;
   fill: black;
 }
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 768px) {
   .logo__svg {
-    width: 80px;
-    height: 30px;
-    margin-bottom: 21px;
+    margin-bottom: 0;
+    width: 128px;
+    height: 45px;
   }
 }
 .logo--white {
@@ -2322,15 +2292,15 @@ button {
 }
 
 .footer-svg {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   fill: #ff6b09;
   margin-right: 10px;
 }
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 768px) {
   .footer-svg {
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
   }
 }
 
@@ -2338,30 +2308,22 @@ button {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #111518;
-}
-@media screen and (max-width: 480px) {
-  .div-sub {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 28px;
-    display: flex;
-    align-items: center;
-  }
-}
-@media screen and (min-width: 768px) {
-  .div-sub {
-    text-align: left;
-  }
-}
-
-.div-sub__protected {
-  margin: 0;
   font-weight: 500;
   font-size: 14px;
   line-height: 28px;
-  display: flex;
-  align-items: center;
+}
+
+.div-sub__protected {
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 28px;
   color: #b9b9b9;
+}
+@media screen and (min-width: 768px) {
+  .div-sub__protected {
+    text-align: left;
+  }
 }
 
 /*# sourceMappingURL=/src.e31bb0bc.css.map */
