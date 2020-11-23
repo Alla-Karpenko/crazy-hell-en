@@ -117,13 +117,13 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/longer-text.js":[function(require,module,exports) {
-$(function () {
-  $('.long-switch-btn').on("click", function (e) {
-    $('.testimonial__description').toggleClass('testimonial__description--long');
-  });
-  $('.short-switch-btn').on("click", function (e) {
-    $('.testimonial__description').toggleClass('testimonial__description--long');
+})({"js/slider.js":[function(require,module,exports) {
+$(document).on('ready', function () {
+  $(".testimonial__slider").slick({
+    infinite: true,
+    slidesToShow: 1,
+    nextArrow: '.testimonials__next-btn',
+    prevArrow: '.testimonials__prev-btn'
   });
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -330,5 +330,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/longer-text.js"], null)
-//# sourceMappingURL=/longer-text.5bd663e3.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/slider.js"], null)
+//# sourceMappingURL=/slider.d16eec5e.js.map
