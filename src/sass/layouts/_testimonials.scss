@@ -90,7 +90,7 @@
     margin-left: 5px;
     margin-right: 5px;
     border: 0px solid $accent-color;
-    transition: border $transition-duration $cubic-bezier;
+    transition: border $transition-duration cubic-bezier($cubic-bezier);
 
     &:hover,
     &:focus {
