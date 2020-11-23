@@ -1,9 +1,9 @@
 $(function () {
-  $('.long-switch-btn').click(function (e) {
+  $('.long-switch-btn').on("click",function (e) {
     $('.testimonial__description').toggleClass('testimonial__description--long');
   });
 
-  $('.short-switch-btn').click(function (e) {
+  $('.short-switch-btn').on("click",function (e) {
     $('.testimonial__description').toggleClass('testimonial__description--long');
   });
 });
