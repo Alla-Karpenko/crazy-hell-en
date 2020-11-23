@@ -1,14 +1,9 @@
-(() => {
-  const refs = {
-    makeLong: document.querySelector("[data-makeLong]"),
-    makeShort: document.querySelector("[data-makeShort]"),
-    description: document.querySelector("[data-description]"),
-  };
+$(function () {
+  $('.long-switch-btn').on("click",function (e) {
+    $('.testimonial__description').toggleClass('testimonial__description--long');
+  });
 
-  refs.makeLong.addEventListener("click", toggleModal);
-  refs.makeShort.addEventListener("click", toggleModal);
-
-  function toggleModal() {
-    refs.description.classList.toggle("testimonial__description--long");
-  }
-})();
+  $('.short-switch-btn').on("click",function (e) {
+    $('.testimonial__description').toggleClass('testimonial__description--long');
+  });
+});
