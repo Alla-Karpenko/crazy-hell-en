@@ -120,23 +120,16 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"js/modal.js":[function(require,module,exports) {
 (function () {
   var refs = {
-    openModalBtn: document.querySelector("[data-modal-open]"),
-    closeModalBtn: document.querySelector("[data-modal-close]"),
-    program: document.querySelector("[program-closed]"),
-    teacher: document.querySelector("[teacher-closed]"),
-    methods: document.querySelector("[methods-closed]"),
-    footer: document.querySelector("[footer-closed]"),
-    modal: document.querySelector("[data-modal]")
+    openModalBtn: document.querySelector('[data-modal-open]'),
+    closeModalBtn: document.querySelector('[data-modal-close]'),
+    modal: document.querySelector('[data-modal]')
   };
-  refs.openModalBtn.addEventListener("click", toggleModal);
-  refs.closeModalBtn.addEventListener("click", toggleModal);
-  refs.program.addEventListener("click", toggleModal);
-  refs.teacher.addEventListener("click", toggleModal);
-  refs.methods.addEventListener("click", toggleModal);
-  refs.footer.addEventListener("click", toggleModal);
+  refs.openModalBtn.addEventListener('click', toggleModal);
+  refs.closeModalBtn.addEventListener('click', toggleModal);
 
   function toggleModal() {
-    refs.modal.classList.toggle("is-hidden");
+    document.body.classList.toggle('modal-open');
+    refs.modal.classList.toggle('is-hidden');
   }
 })();
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -167,7 +160,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60796" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57320" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

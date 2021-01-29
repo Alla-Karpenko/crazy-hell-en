@@ -119,7 +119,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"js/slider.js":[function(require,module,exports) {
 $(document).on('ready', function () {
-  $(".testimonial__slider").slick({
+  $('.testimonial__slider').slick({
     infinite: true,
     slidesToShow: 1,
     nextArrow: '.testimonials__next-btn',
@@ -154,7 +154,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60796" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57320" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
